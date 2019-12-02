@@ -1,2 +1,441 @@
 @import (less) "../css/normalize.css";
 @import (less) "../css/layout.css";
+@import (less) "../css/slick.css";
+
+/*fonts*/
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:700,700i&display=swap');
+@font-face {
+  font-family: 'Gabelisa';
+  src: url(../css/fonts/Gabelisa.woff);
+}
+
+/**/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	font-family: 'Playfair Display', sans-serif;
+}
+.center{
+	text-align: center;
+}
+.yva-container{
+	width: 1440px;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin: 0 auto;
+}
+.yva-container-nopad{
+	width: 1440px;
+	margin: 0 auto;
+}
+.yva-header{
+	background: url(../img/background-header.png);
+	padding-top: 26px;
+	padding-bottom: 270px;
+	position: relative;
+	overflow: visible;
+	z-index: 3;
+	&__image{
+		position: absolute;
+		&:nth-child(1){
+			left: 198px;
+			bottom: -110px;
+		}
+		&:nth-child(2){
+			left: 670px;
+			top: 206px;
+		}
+		&:nth-child(3){
+			left: 681px;
+			top: 235px;
+		}
+	}
+	&__maintitle{
+		padding-top: 210px;
+		font-size: 120px;
+		line-height: 120px;
+		font-family: "Gabelisa", sans-serif;
+		font-weight: bold;
+		letter-spacing: 4px;
+		color: rgb(240,75,88);
+		padding-right: 786px;
+		text-align: right;
+	}
+	&__logo{
+		vertical-align: middle;
+	}
+	&__text{
+		text-align: right;
+		font-size: 28px;
+		color: rgb(235,174,76);
+		font-weight: bold;
+		&:before{
+			content: url(../img/icon.png);
+			padding-right: 20px;
+			vertical-align: -30%;
+
+		}
+	}
+	&__mainnav{
+		display: inline-block;
+		&-li{
+			display: inline-block;
+			padding-left: 48px;
+			&:nth-child(1){
+				padding-left: 538px;
+			}
+		}
+		&-link{
+			color: white;
+			font-weight: bold;
+			text-transform: uppercase;
+			vertical-align: middle; 
+			letter-spacing: 4px;
+			display: block;
+			&:hover{
+				color: rgb(235,174,76);
+				transform: translate(0, 2px);
+			}
+		}
+	}
+}
+.yva-section-1{
+	padding-top: 144px;
+	padding-bottom: 98px;
+	background-color: white;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	&__title{
+		font-family: "Gabelisa", sans-serif;
+		font-weight: bold;
+		letter-spacing: 4px;
+		color: rgb(240,75,88);
+		font-size: 86px;
+		line-height: 86px;
+		padding-bottom: 52px;
+		&-secondary{
+			font-size: 40px;
+			line-height: 40px;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+		}
+	}
+	&__text{
+		font-size: 22px;
+		padding: 0 162px 58px;
+	}
+	&__button{
+		background-color: rgba(255,255,255,0.9);
+		border: 1px solid rgba(240,75,88,0.3);
+		padding: 20px 38px;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: black;
+		transition: all 750ms ease;
+		border-radius: 10px;
+		&:hover{
+			color: rgb(240,75,88);
+			border: 1px solid rgba(240,75,88,1);
+		}
+	}
+	&__image{
+		position: absolute;
+		&:nth-child(1){
+			top: 176px;
+			left: 86px;
+		}
+		&:nth-child(2){
+			top: -26px;
+			left: 1204px;
+		}
+		&:nth-child(3){
+			top: 490px;
+			left: 1100px;
+		}
+		&:nth-child(4){
+			top: 108px;
+			left: 1098px;
+		}
+		&:nth-child(5){
+			top: 522px;
+			left: 262px;
+		}
+	}
+}
+.yva-section-2{
+	padding-top: 270px;
+	padding-bottom: 354px;
+	z-index: 1;
+	text-align: center;
+	background: url(../img/background-section-2.png) 50% 50% no-repeat;
+	background-size: cover;
+	&__title{
+		font-size: 32px;
+		color: white;
+		letter-spacing: 6px;
+		text-transform: uppercase;
+		&:after{
+			content: url(../img/section-2-after.png);
+			display: block;
+			padding-top: 34px;
+		}
+	}
+}
+.yva-section-4{
+	position: relative;
+	&__title{
+		font-family: "Gabelisa", sans-serif;
+		font-weight: bold;
+		letter-spacing: 4px;
+		color: rgb(240,75,88);
+		font-size: 86px;
+		line-height: 86px;
+		&-secondary{
+			font-size: 40px;
+			line-height: 40px;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			padding-bottom: 22px;
+		}
+	}
+	&__slide{
+		padding: 120px 130px 136px;
+		background: url(../img/section-4-background.png) 95% 50% no-repeat;
+		background-size: 50%;
+		background-color: white;
+	}
+	&__text{
+		font-size: 22px;
+		padding-right: 660px;
+		padding-bottom: 38px;
+	}
+	&__slider-dots{
+		list-style-type: none;
+		padding-left: 130px;
+		position: absolute;
+		top: 450px;
+		left: 0;
+		& li{
+			display: inline-block;
+			font-size: 0;
+			width: 20px;
+			height: 20px;
+			margin-left: 12px;
+			background-color: rgb(220,220,220);
+			cursor: pointer;
+			border-radius: 50%;
+			&:nth-child(1){
+				margin-left: 0;
+			}
+			& > button{
+				display: none;
+			}
+		}
+	}
+}
+li.slick-active{
+	background-color: rgb(235,174,76);
+}
+.yva-section-3{
+	padding-top: 106px;
+	padding-bottom: 60px;
+	&__element{
+		display: inline-block;
+		width: 49%;
+		vertical-align: top;
+		&-title{
+		font-family: "Gabelisa", sans-serif;
+		font-weight: bold;
+		letter-spacing: 4px;
+		color: rgb(240,75,88);
+		font-size: 86px;
+		line-height: 86px;
+		padding-bottom: 40px;
+			&-secondary{
+			font-size: 40px;
+			line-height: 40px;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			padding-top: 44px;
+			padding-bottom: 22px;
+			}
+		}
+		&-small{
+			display: inline-block;
+			width: 74%;
+			vertical-align: top;
+			&:nth-child(2){
+				width: 24%;
+				text-align: right;
+			}
+			&-title{
+				font-size: 26px;
+				line-height: 26px;
+				padding-bottom: 28px;
+			}
+			&-text{
+				font-size: 16px;
+				line-height: 22px;
+				color: gray;
+				padding-bottom: 26px;
+			}
+			&-price{
+				color: rgb(240,75,88);
+				font-size: 28px;
+				font-weight: bold;
+			}
+		}
+	}
+}
+.yva-section-5{
+	padding-top: 68px;
+	padding-bottom: 118px;
+	text-align: center;
+	z-index: 2;
+	position: relative;
+	&__images{
+		position: absolute;
+		bottom: 296px;
+		right: 90px;
+		&:nth-child(2){
+			bottom: -82px;
+			left: 0;
+		}
+	}
+	& form{
+		width: 782px;
+		margin: 0 auto;
+		font-size: 0;
+	}
+	&__title{
+		font-family: "Gabelisa", sans-serif;
+		font-weight: bold;
+		letter-spacing: 4px;
+		color: rgb(240,75,88);
+		font-size: 86px;
+		line-height: 86px;
+		padding-bottom: 72px;
+		&-secondary{
+			font-size: 40px;
+			line-height: 40px;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			padding-bottom: 24px;
+		}
+	}
+	&__textarea{
+		display: inline-block;
+		width: calc(50% - 15px);
+		font-size: 18px;
+		border: 1px solid rgba(0,0,0,0.3);
+		padding: 24px 20px;
+		border-radius: 6px; 
+		outline: none;
+		&:nth-child(1){
+			margin-bottom: 30px;
+		}
+		&:nth-child(2){
+			margin-bottom: 30px;
+			margin-left: 30px;
+		}
+		&:nth-child(3){
+			margin-bottom: 30px;
+		}
+		&:nth-child(4){
+			margin-bottom: 30px;
+			margin-left: 30px;
+		}						
+	}
+	&__button{
+		display: inline-block;
+		width: calc(50% - 15px);
+		font-size: 18px;
+		background-color: rgb(240,75,88);
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		border: 3px solid rgb(240,75,88);
+		margin-left: 30px;
+		padding: 22px 0;
+		border-radius: 6px;
+		&:hover{
+			color: rgb(240,75,88);
+			background-color: white;
+			border: 3px solid rgb(240,75,88);
+			letter-spacing: 4px;
+			font-weight: 700;
+		}
+	}
+}
+.yva-footer{
+	padding-bottom: 60px;
+	z-index: 1;
+	&__mask{
+		background-image: url(../img/footer-back.png);
+		padding-top: 100px;
+		background-size: cover;
+	}
+	&__text{
+		color: white;
+		font-size: 26px;
+		padding-top: 82px;
+			&:before{
+				content: url(../img/footericon1.png);
+				display: block;
+				padding-bottom: 16px;
+			}
+		&:nth-child(2){
+			padding-top: 50px;
+			padding-bottom: 74px;
+			&:before{
+				content: url(../img/footericon2.png);
+				display: block;
+				padding-bottom: 16px;
+			}
+		}
+	}
+	&__copy{
+		color: white;
+		font-size: 16px;
+		vertical-align: middle;
+		display: inline-block;
+		letter-spacing: 1px;
+	}
+	&__social{
+		display: inline-block;
+		padding-left: 790px;
+		padding-bottom: 16px;
+		&-link{
+			display: inline-block;
+			vertical-align: middle;
+			padding-left: 13px;
+			&:nth-child(1){
+				padding-left: 0;
+			}
+		}
+		&-img{
+			border: 3px solid transparent;
+			&:hover{
+				border: 3px solid rgb(235,174,76);
+				border-radius: 50%;
+			}
+		}
+	}
+}
